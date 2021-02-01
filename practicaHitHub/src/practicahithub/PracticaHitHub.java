@@ -23,16 +23,14 @@ public class PracticaHitHub {
         System.out.println("Cuantos numeros quieres anotar?");
         nums=sc.nextInt();
         int numeros[]=new int [nums];
+        boolean buscarOk;
         
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Anota un numero");
             numeros[i]=sc.nextInt();
-            for (int j = 0; j < i; j++) {
-                if(numeros[j]==numeros[i]){
-                    System.out.println("Numero no valido, no se pueden repetir numeros");
-                    i--;
-                }
-            }
+            buscarOk=noRepetir(numeros,i);
+            if(buscarOk==true)
+                i--;
         }
         
         Arrays.sort(numeros);
@@ -40,6 +38,17 @@ public class PracticaHitHub {
         for (int i = 0; i < numeros.length; i++) {
             System.out.println(numeros[i]); 
         }
+    }
+    
+    public static boolean noRepetir (int num[],int i){
+  
+        for (int j = 0; j < i; j++) {
+            if(num[j]==num[i]){
+                System.out.println("Numero no valido, no se pueden repetir numeros");
+                return true;
+                }     
+            }
+        return false;
     }
     
 }
