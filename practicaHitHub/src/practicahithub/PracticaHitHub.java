@@ -18,8 +18,11 @@ public class PracticaHitHub {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc=new Scanner(System.in);
+        int nums;
         
-        int numeros[]=new int [10];
+        System.out.println("Cuantos numeros quieres anotar?");
+        nums=sc.nextInt();
+        int numeros[]=new int [nums];
         
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Anota un numero");
