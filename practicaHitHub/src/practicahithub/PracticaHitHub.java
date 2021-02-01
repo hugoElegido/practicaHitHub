@@ -24,12 +24,18 @@ public class PracticaHitHub {
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Anota un numero");
             numeros[i]=sc.nextInt();
+            for (int j = 0; j < i; j++) {
+                if(numeros[j]==numeros[i]){
+                    System.out.println("Numero no valido, no se pueden repetir numeros");
+                    i--;
+                }
+            }
         }
         
         Arrays.sort(numeros);
         
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println(numeros[i]);   
+            System.out.println(numeros[i]); 
         }
     }
     
